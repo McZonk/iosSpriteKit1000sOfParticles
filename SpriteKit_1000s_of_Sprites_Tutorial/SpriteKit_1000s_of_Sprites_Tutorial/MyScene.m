@@ -8,6 +8,10 @@
 
 #import "MyScene.h"
 
+static inline float frand() { // still slow, better than arc4random*
+	return rand() / (float)RAND_MAX;
+}
+
 @interface MyScene()
 @end
 
@@ -15,7 +19,7 @@
 
 -(id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
-        
+        srand((int)time(0));
     }
     return self;
 }
@@ -30,7 +34,7 @@
     // cycle through and throw as many sprites into the node as you want
     for (int i = 0; i < 5000; i++) {
         SKSpriteNode *sprite = [SKSpriteNode spriteNodeWithTexture:ledTexture];
-        sprite.position = CGPointMake(arc4random_uniform(320), arc4random_uniform(568));
+        sprite.position = CGPointZero;
         sprite.colorBlendFactor = 1.;
         [self addChild:sprite];
     }
@@ -44,8 +48,8 @@
     // this is where most of the heavy lifting now happens, as opposed to at the drawing stage
     
     for (SKSpriteNode *sprite in self.children) {
-        UIColor *randColor = (arc4random_uniform(10) >= 5) ? [UIColor redColor] : [UIColor greenColor];
-        sprite.position = CGPointMake(arc4random_uniform(320), arc4random_uniform(568));
+        UIColor *randColor = rand() & 1 ? [UIColor redColor] : [UIColor greenColor];
+        sprite.position = CGPointMake(frand() * 320, frand() * 568);
         [sprite setColor:randColor];
     }
 }
