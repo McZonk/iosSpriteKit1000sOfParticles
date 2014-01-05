@@ -13,6 +13,7 @@ static inline float frand() { // still slow, better than arc4random*
 }
 
 @interface MyScene()
+@property (nonatomic, strong) NSArray *sprites;
 @end
 
 @implementation MyScene
@@ -30,7 +31,7 @@ static inline float frand() { // still slow, better than arc4random*
     
     // create the particle texture
     SKTexture *ledTexture = [SKTexture textureWithImageNamed:@"whitePixel"];
-    
+	
     // cycle through and throw as many sprites into the node as you want
     for (int i = 0; i < 5000; i++) {
         SKSpriteNode *sprite = [SKSpriteNode spriteNodeWithTexture:ledTexture];
@@ -38,7 +39,8 @@ static inline float frand() { // still slow, better than arc4random*
         sprite.colorBlendFactor = 1.;
         [self addChild:sprite];
     }
-    
+
+    self.sprites = [NSArray arrayWithArray:self.children];
 }
 
 
@@ -47,7 +49,7 @@ static inline float frand() { // still slow, better than arc4random*
     // cycle through the children of the sprite and reposition
     // this is where most of the heavy lifting now happens, as opposed to at the drawing stage
     
-    for (SKSpriteNode *sprite in self.children) {
+    for (SKSpriteNode *sprite in self.sprites) {
         UIColor *randColor = rand() & 1 ? [UIColor redColor] : [UIColor greenColor];
         sprite.position = CGPointMake(frand() * 320, frand() * 568);
         [sprite setColor:randColor];
