@@ -34,9 +34,11 @@ static inline float frand() { // still slow, better than arc4random*
 	
     // cycle through and throw as many sprites into the node as you want
     for (int i = 0; i < 5000; i++) {
-        SKSpriteNode *sprite = [SKSpriteNode spriteNodeWithTexture:ledTexture];
+		UIColor *randColor = rand() & 1 ? [UIColor redColor] : [UIColor greenColor];
+		SKSpriteNode *sprite = [SKSpriteNode spriteNodeWithTexture:ledTexture];
         sprite.position = CGPointZero;
         sprite.colorBlendFactor = 1.;
+        sprite.color = randColor;
         [self addChild:sprite];
     }
 
@@ -50,9 +52,7 @@ static inline float frand() { // still slow, better than arc4random*
     // this is where most of the heavy lifting now happens, as opposed to at the drawing stage
     
     for (SKSpriteNode *sprite in self.sprites) {
-        UIColor *randColor = rand() & 1 ? [UIColor redColor] : [UIColor greenColor];
         sprite.position = CGPointMake(frand() * 320, frand() * 568);
-        [sprite setColor:randColor];
     }
 }
 
