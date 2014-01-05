@@ -38,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5093D6EA187A01EF00278704 /* Random69069.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Random69069.h; sourceTree = "<group>"; };
+		5093D6EB187A02F500278704 /* idRandom2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = idRandom2.h; sourceTree = "<group>"; };
 		97F5894E1876749C00455847 /* SpriteKit_1000s_of_Sprites_Tutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpriteKit_1000s_of_Sprites_Tutorial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97F589511876749C00455847 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		97F589531876749C00455847 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -134,6 +136,8 @@
 				97F5896E1876749D00455847 /* Spaceship.png */,
 				97F589701876749D00455847 /* Images.xcassets */,
 				97F5895A1876749C00455847 /* Supporting Files */,
+				5093D6EA187A01EF00278704 /* Random69069.h */,
+				5093D6EB187A02F500278704 /* idRandom2.h */,
 			);
 			path = SpriteKit_1000s_of_Sprites_Tutorial;
 			sourceTree = "<group>";
@@ -480,6 +484,7 @@
 				97F589891876749D00455847 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		97F5898A1876749D00455847 /* Build configuration list for PBXNativeTarget "SpriteKit_1000s_of_Sprites_TutorialTests" */ = {
 			isa = XCConfigurationList;
@@ -488,6 +493,7 @@
 				97F5898C1876749D00455847 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
